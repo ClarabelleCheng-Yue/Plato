@@ -55,11 +55,14 @@ class MyEditor extends React.Component {
       editorState: newProps.currentNote,
       title: newProps.currentNoteTitle
     });
+
+    console.log(this.state.editorState, 'new editor state');
+    console.log(this.state.title, 'new title');
   }
 
   render() {
     return (
-      <div>
+      <div className="editor">
         <div>
           <input
             type="text"
