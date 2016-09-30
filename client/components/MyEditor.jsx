@@ -37,7 +37,7 @@ class MyEditor extends React.Component {
       const userTitle = this.state.title;
       const username = this.props.username;
       const url = 'api/save-note';
-      // submit the note to the server for storage in db
+      
       request
         .post(url)
         .send({
@@ -52,6 +52,7 @@ class MyEditor extends React.Component {
           } else {
             this.props.fetchNotes(this.props.username);
           }
+          console.log(res, 'new note submitted!!');
         });
     };
 
