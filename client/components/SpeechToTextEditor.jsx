@@ -41,7 +41,9 @@ class SpeechToTextEditor extends React.Component {
     };
 
     this.onChange = (editorState) => {
+      console.log(editorState, 'speech to text state');
       this.setState({ editorState });
+      console.log(editorState, 'speech to text changed');
     };
 
     this.titleChange = (event) => {
@@ -66,6 +68,7 @@ class SpeechToTextEditor extends React.Component {
           if (err) {
             console.log('There is an error in submitNote: ', err);
           }
+          console.log(res, 'res');
         });
     };
 
@@ -81,6 +84,7 @@ class SpeechToTextEditor extends React.Component {
       const insert = Modifier.insertText(contentState, selection, string);
       const newEditorState = EditorState.push(editorState, insert, 'insert-fragment');
       this.setState({ editorState: newEditorState });
+      console.log('new editor state: ', this.state.editorState);
     };
 
     this.toggleRecordingState = () => {

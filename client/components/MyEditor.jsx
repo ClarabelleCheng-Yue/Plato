@@ -31,6 +31,8 @@ class MyEditor extends React.Component {
       const username = this.props.username;
       const url = 'api/save-note';
 
+      console.log(userNote, 'user note'); // text is in here.
+      
       request
         .post(url)
         .send({
@@ -43,6 +45,7 @@ class MyEditor extends React.Component {
           if (err) {
             console.log('There is an error in submitNote: ', err);
           }
+          console.log(res, 'new note submitted!!');
         });
     };
   }
