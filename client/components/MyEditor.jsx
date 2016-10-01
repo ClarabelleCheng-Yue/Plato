@@ -37,7 +37,6 @@ class MyEditor extends React.Component {
       const userTitle = this.state.title;
       const username = this.props.username;
       const url = 'api/save-note';
-      
       request
         .post(url)
         .send({
