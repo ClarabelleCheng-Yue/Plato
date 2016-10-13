@@ -53,7 +53,6 @@ class NoteItem extends React.Component {
           if (err) {
             console.log('Error sharing notes ... ', err);
           } else {
-            // success
             console.log('Shared the note!');
           }
         });
@@ -62,7 +61,7 @@ class NoteItem extends React.Component {
 
   render() {
     return (
-      <li>
+      <li className="note-item">
         <p>{this.props.title}</p>
         <Button
           onClick={() => {
@@ -104,8 +103,14 @@ NoteItem.propTypes = {
   title: React.PropTypes.string,
   noteId: React.PropTypes.string,
   username: React.PropTypes.string,
-  transcriptText: React.PropTypes.object,
-  notesText: React.PropTypes.object,
+  transcriptText: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.instanceOf(Object)
+  ]),
+  notesText: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.instanceOf(Object)
+  ]),
   loadNote: React.PropTypes.func,
   loadTranscript: React.PropTypes.func,
   deleteNote: React.PropTypes.func
