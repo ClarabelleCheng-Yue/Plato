@@ -21,14 +21,11 @@ const logout = () => {
 
 const NavBar = () => (
   <div>
-
     <Navbar brand="Plato" right>
       <NavItem><Link to="/login">Login</Link></NavItem>
       <NavItem onClick={logout}>Logout</NavItem>
     </Navbar>
-
   </div>
-
 );
 
 export default NavBar;
