@@ -20,7 +20,7 @@ const logoutfun = () => {
 
 const NavBar = () => (
   <div>
-    <h3>Plato</h3>
+    <h3>Platonotes</h3>
     <ul>
       <li><Link to="/login">login</Link></li>
       <li><button onClick={logoutfun}>logout</button></li>
