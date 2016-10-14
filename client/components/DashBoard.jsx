@@ -20,10 +20,6 @@ class DashBoard extends React.Component {
 // eslint-disable-next-line 
   constructor(props) {
     super(props);
-
-    this.state = {
-      didClick: false
-    };
   }
 
   componentWillMount() {

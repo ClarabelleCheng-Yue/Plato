@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchNotes: username => dispatch(a.fetchNotes(username)),
-  onNoteChange: newEditorState => dispatch(a.onTextEditorChange(newEditorState)),
+  onNoteChange: newEditorState =>
+    dispatch(a.onTextEditorChange(newEditorState)),
   onTitleChange: e => (
     dispatch(a.onSessionTitleCreate(e.target.value))
   )
