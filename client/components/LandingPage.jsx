@@ -13,9 +13,9 @@ const LandingPage = () => (
   <div>
     <div className="grey lighten-4">
       <div>
-      <div styles={sectionStyle}>
-        Hello from the otherside
-      </div>
+        <div>
+          Hello from the otherside
+        </div>
         <div className="row container">
           <div className="col s3">
             <div className="card white">
@@ -121,7 +121,7 @@ const LandingPage = () => (
             <div className="col l4 offset-l2 s12">
               <h5 className="white-text">Links</h5>
               <ul>
-                <li><a className="grey-text text-lighten-3" href="#!"></a></li>
+                <li><a className="grey-text text-lighten-3" href="#!">a</a></li>
               </ul>
             </div>
           </div>

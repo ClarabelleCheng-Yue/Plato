@@ -28,9 +28,6 @@ const mapDispatchToProps = dispatch => ({
   saveSession: sessionPkg => (
     dispatch(a.saveSession(sessionPkg))
   ),
-  onTitleChange: e => (
-    dispatch(a.onSessionTitleCreate(e.target.value))
-  ),
   hasSignedIn: bool => dispatch(a.setSignIn(bool))
 });
 
@@ -103,17 +100,11 @@ class Session extends React.Component {
     return (
       <div>
         <Row>
-          <input
-            type="text"
-            value={this.props.title}
-            onChange={this.props.onTitleChange}
-            placeholder="Title"
-          />
-          <Col s={5} className="grey lighten-2 base-col-height">
+          <Col s={5} className="grey lighten-2 base-col-height" id="transcript">
             <SpeechToTextEditor />
           </Col>
 
-          <Col s={5} className="base-col-height">
+          <Col s={5} className="base-col-height" id="notepad">
             <MediumEditor />
           </Col>
         </Row>
@@ -134,7 +125,7 @@ Session.propTypes = {
   currentCanvas: React.PropTypes.object,
   username: React.PropTypes.string,
   saveSession: React.PropTypes.func,
-  onTitleChange: React.PropTypes.func
+  // onTitleChange: React.PropTypes.func
 };
 
 const SessionContainer = connect(

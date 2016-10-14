@@ -20,6 +20,10 @@ class DashBoard extends React.Component {
 // eslint-disable-next-line 
   constructor(props) {
     super(props);
+
+    this.state = {
+      didClick: false
+    };
   }
 
   componentWillMount() {
@@ -30,7 +34,7 @@ class DashBoard extends React.Component {
     return (
       <div>
         <Row>
-          <Col s={3} className="teal lighten-3 base-col-height left-panel">
+          <Col s={3} className="teal lighten-3 base-col-height left-panel" id="notelist">
             <h7 className="h7">{this.props.username}'s Notes</h7>
             <SearchBarContainer />
             <NoteListContainer />
@@ -44,12 +48,13 @@ class DashBoard extends React.Component {
           <Col
             s={3}
             className="login right-panel"
+            id="chat"
           >
             <ChatClientComponent />
           </Col>
         </Row>
         <Row>
-          <Col s={12} className="base-col-height">
+          <Col s={12} className="base-col-height" id="canvas">
             <Canvas />
           </Col>
         </Row>
@@ -57,34 +62,32 @@ class DashBoard extends React.Component {
           className="fixed-action-btn vertical"
           style={{ bottom: 45, right: 24 }}
         >
-          <a className="btn-floating btn-large red">
+          <a
+            className="btn-floating btn-large"
+            style={{ backgroundColor: '#696969' }}
+          >
             <i className="large material-icons">mode_edit</i>
           </a>
-          <ul>
+          <ul className="dashboard-fab">
             <li>
               <a
-                className="btn-floating btn-large orange darken-1"
-                style={{ 'font-size': 10 }}
-              ><span>Note</span></a></li>
-            <li>
-              <a
-                className="btn-floating btn-large"
-                style={{ 'font-size': 10 }}
+                className="btn-floating btn-large yellow darken-1"
+                onClick={() => toggleVisibility('notelist')}
               ><span>Notes</span></a></li>
             <li>
               <a
-                className="btn-floating btn-large red"
-                style={{ 'font-size': 10 }}
+                className="btn-floating btn-large yellow darken-1"
+                onClick={() => toggleVisibility('transcript')}
               ><span>Scribe</span></a></li>
             <li>
               <a
-                className="btn-floating btn-large"
-                style={{ 'font-size': 10, 'background-color': '#696969' }}
+                className="btn-floating btn-large yellow darken-1"
+                onClick={() => toggleVisibility('chat')}
               ><span>Chat</span></a></li>
             <li>
               <a
-                className="btn-floating btn-large black"
-                style={{ 'font-size': 10 }}
+                className="btn-floating btn-large yellow darken-1"
+                onClick={() => toggleVisibility('canvas')}
               ><span>Canvas</span></a></li>
           </ul>
         </div>
