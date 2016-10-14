@@ -27,8 +27,7 @@ const mapDispatchToProps = dispatch => ({
   },
   saveSession: sessionPkg => (
     dispatch(a.saveSession(sessionPkg))
-  ),
-  hasSignedIn: bool => dispatch(a.setSignIn(bool))
+  )
 });
 
 // Note-taking Session class
