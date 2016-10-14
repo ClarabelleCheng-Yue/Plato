@@ -29,7 +29,7 @@ const MediumEditor = props => (
     <Editor
       editorState={props.currentNote}
       onChange={props.onNoteChange}
-      placeholder="Start typing here ..."
+      placeholder="Start typing notes here ..."
     />
   </div>
 );

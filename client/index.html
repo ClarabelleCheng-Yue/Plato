@@ -13,15 +13,9 @@
 </head>
 <body>
 <script>
-  // $(document).ready(() => {
-  //    $('.parallax').parallax();
-  //  });
+  // makes components disappear and reappear
   function toggleVisibility(name) {
-    console.log(name, 'name');
     const e = document.getElementById(name);
-    console.log(e, 'e');
-    // const arr = e.toArray();
-    // console.log(arr, 'arr');
     if (e.style.display !== 'none') {
       e.style.display = 'none';
     } else {

@@ -11,8 +11,6 @@
 .chat-client-container{
   max-height: 565px;
   overflow: hidden;
-  background: #eeeeee;
-  border: solid #A1A1A1 1px;
 }
 
 .chat-client-container>h2{
@@ -25,16 +23,17 @@
 }
 
 #chat-messages-display{
-  padding: 0 1em 0 1em;
   max-height: 350px;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: white;
-  border-top: solid #A1A1A1 1px;
+  color: black;
+  text-align: left;
 }
 
 .chat-client-input{
   background: white;
+  color: black;
 }
 
 .column-header-lists{

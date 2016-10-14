@@ -71,11 +71,6 @@ class DashBoard extends React.Component {
             <li>
               <a
                 className="btn-floating btn-large yellow darken-1"
-                onClick={() => toggleVisibility('chat')}
-              ><span>Chat</span></a></li>
-            <li>
-              <a
-                className="btn-floating btn-large yellow darken-1"
                 onClick={() => toggleVisibility('canvas')}
               ><span>Canvas</span></a></li>
           </ul>

@@ -48,62 +48,57 @@ class ChatClient extends React.Component {
   }
   render() {
     return (
-      <div className="chat-client-container">
-        <form
-          className="chat-room-select"
-          onSubmit={(e) => {
-            e.preventDefault();
-            this.state.clearChatRoom();
-            this.state.loadRoom();
-          }}
-        >
-          <label
-            htmlFor="chat-room-select-input"
+      <div className="chat-client-container card light-blue darken-3">
+        <div className="card-content white-text center-align">
+          <form
+            className="chat-room-select"
+            onSubmit={(e) => {
+              e.preventDefault();
+              this.state.clearChatRoom();
+              this.state.loadRoom();
+            }}
           >
-            room:
-          </label>
-          <input
-            name="chat-room-select-input"
-            type="text"
-            placeholder="test room 1"
-            value={this.state.chatRoom}
-            onChange={e => this.setState({ chatRoom: e.target.value })}
+            <span
+              className="center-align card-title chat-room-header"
+            >
+              Room:
+            </span>
+            <input
+              name="chat-room-select-input"
+              type="text"
+              placeholder="type room name"
+              value={this.state.chatRoom}
+              onChange={e => this.setState({ chatRoom: e.target.value })}
+            />
+          </form>
+          <p>Chat:</p>
+          <ChatMessagesDisplay
+            messages={this.props.messages}
           />
-        </form>
-        <p>Chat:</p>
-        <ChatMessagesDisplay
-          messages={this.props.messages}
-        />
-        <form
-          className="chat-client-input"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // Form is not properly re rendering after setState
-            // Redux conflict? This is a problem with all app's forms
-            const messageObj = {
-              room_id: this.state.chatRoom,
-              user_id: this.state.username,
-              text: this.state.message,
-              timestamp: Date.now()
-            };
-            console.log('MessageObj on chat client: ', messageObj);
-            this.state.onMessageSubmit(messageObj);
-            this.setState({ message: '' });
-          }}
-        >
-          <label
-            htmlFor="chat-message-input"
+          <form
+            className="chat-client-input"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const messageObj = {
+                room_id: this.state.chatRoom,
+                user_id: this.state.username,
+                text: this.state.message,
+                timestamp: Date.now()
+              };
+              this.state.onMessageSubmit(messageObj);
+              this.setState({ message: '' });
+            }}
           >
-            message:
-          </label>
-          <input
-            name="chat-message-input"
-            type="text"
-            placeholder="start typing..."
-            value={this.state.message}
-            onChange={e => this.setState({ message: e.target.value })}
-          />
-        </form>
+            <input
+              className="chat-message-input"
+              name="chat-message-input"
+              type="text"
+              placeholder="start typing..."
+              value={this.state.message}
+              onChange={e => this.setState({ message: e.target.value })}
+            />
+          </form>
+        </div>
       </div>
     );
   }

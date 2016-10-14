@@ -117,7 +117,7 @@ class SpeechToTextEditor extends React.Component {
           <Editor
             editorState={this.props.currentTranscript}
             onChange={e => this.props.reloadTranscript(e)}
-            placeholder="This is your audio transcription... "
+            placeholder="This is your audio transcription. Click Record to start your Scribe!"
           />
         </Row>
         <Row>
